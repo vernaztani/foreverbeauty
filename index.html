@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pacientes - Fisioterapia Dermatofuncional</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo Consultorio Fisioterapia" class="logo">
+        </div>
+        <h1>Gestión de Pacientes</h1>
+<h2>LTF. BRENDA ISABEL BRITO TEJEDA</h2>
+
+        <div class="form-section">
+            <h2>Registrar Nuevo Paciente</h2>
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" required>
+
+            <label for="motivoConsulta">Motivo de Consulta Principal:</label>
+            <textarea id="motivoConsulta"></textarea>
+
+            <label for="diagnosticoFisio">Diagnóstico Fisioterapéutico:</label>
+            <textarea id="diagnosticoFisio"></textarea>
+            
+            <label for="tratamientofisio">Tratamiento Fisioterapéutico:</label>
+            <textarea id="tratamientoFisio"></textarea>
+
+            <label for="antecedentes">Antecedentes Médicos Relevantes:</label>
+            <textarea id="antecedentes"></textarea>
+
+            <button id="guardarPaciente">Guardar Paciente</button>
+            <p id="mensajeGuardado" class="mensaje"></p>
+        </div>
+
+        <hr>
+
+        <div class="search-section">
+            <h2>Buscar Paciente</h2>
+            <input type="text" id="busquedaNombre" placeholder="Buscar por nombre...">
+            <button id="buscarPaciente">Buscar</button>
+            <button id="mostrarTodos">Mostrar Todos los Pacientes</button>
+
+            <hr>
+            <button id="exportarDatos">Exportar Todos los Datos</button>
+            <input type="file" id="importarArchivo" accept=".json" style="display: none;">
+            <button id="importarDatos">Importar Datos</button>
+            <span id="importMessage" class="mensaje" style="display: none; margin-left: 10px;"></span>
+
+            <div id="resultadosBusqueda">
+                </div>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Expediente del Paciente</h2>
+            <p><strong>Nombre:</strong> <span id="modalPacienteNombre"></span></p>
+            <p><strong>Fecha de Nacimiento:</strong> <span id="modalPacienteFechaNac"></span></p>
+            <p><strong>Edad Actual:</strong> <span id="modalPacienteEdad"></span></p>
+
+            <label for="modalMotivoConsulta">Motivo de Consulta:</label>
+            <textarea id="modalMotivoConsulta"></textarea>
+
+            <label for="modalDiagnosticoFisio">Diagnóstico Fisioterapéutico:</label>
+            <textarea id="modalDiagnosticoFisio"></textarea>
+
+            <label for="modalAntecedentes">Antecedentes Médicos Relevantes:</label>
+            <textarea id="modalAntecedentes"></textarea>
+
+            <button id="guardarCambiosExpediente">Guardar Cambios</button>
+            <button id="eliminarPacienteModalBtn" class="delete-patient-btn">Eliminar Paciente</button>
+            <p id="mensajeEdicion" class="mensaje"></p>
+
+            <hr>
+
+            <div class="consultas-section">
+                <h3>Registro de Consultas</h3>
+                <div class="add-consulta-form">
+                    <label for="fechaConsulta">Fecha de Asistencia:</label>
+                    <input type="date" id="fechaConsulta">
+                    <label for="notasConsulta">Notas de la Sesión / Tratamiento Realizado:</label>
+                    <textarea id="notasConsulta"></textarea>
+                    <button id="agregarConsulta">Agregar Consulta</button>
+                </div>
+                <div id="listaConsultas" class="consultas-list">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
